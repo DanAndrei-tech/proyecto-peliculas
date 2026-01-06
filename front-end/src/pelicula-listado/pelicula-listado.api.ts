@@ -13,7 +13,7 @@ export const obtenerPeliculas = async (): Promise<Movie[]> => {
 
 export const borrarPelicula = async (id: string): Promise<void> => {
   try {
-    await axios.delete(`http://localhost:3000/movies/${id}`);
+    await axios.delete(`${API_BASE_URL}/movies/${id}`);
   } catch (error) {
     throw new Error("Error al borrar la pelicula");
   }

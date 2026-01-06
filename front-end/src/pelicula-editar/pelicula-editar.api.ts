@@ -13,7 +13,7 @@ export const obtenerPelicula = async (id: string): Promise<Movie> => {
 
 export const actualizarPelicula = async (pelicula: Movie): Promise<void> => {
   try {
-    await axios.put(`http://localhost:3000/movies/${pelicula.id}`, pelicula);
+    await axios.put(`${API_BASE_URL}/movies/${pelicula.id}`, pelicula);
   } catch (error) {
     throw new Error("Error al actualizar pelicula");
   }

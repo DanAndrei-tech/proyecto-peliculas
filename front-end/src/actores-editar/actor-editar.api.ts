@@ -13,7 +13,7 @@ export const obtenerActor = async (id: string): Promise<Actor> => {
 
 export const actualizarActor = async (actor: Actor): Promise<void> => {
   try {
-    await axios.put(`http://localhost:3000/actors/${actor.id}`, actor);
+    await axios.put(`${API_BASE_URL}/${actor.id}`, actor);
   } catch (error) {
     throw new Error("Error al actualizar actor");
   }
