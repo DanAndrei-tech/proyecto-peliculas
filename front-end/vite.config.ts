@@ -8,9 +8,27 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, "src/index.html"),
-        peliculas: path.resolve(__dirname, "src/pelicula-listado/index.html"),
-        actores: path.resolve(__dirname, "src/actores-listado/index.html"),
+        home: path.resolve(__dirname, "src/index.html"),
+
+        peliculasListado: path.resolve(
+          __dirname,
+          "src/pelicula-listado/index.html"
+        ),
+        peliculasCrear: path.resolve(
+          __dirname,
+          "src/pelicula-crear/index.html"
+        ),
+        peliculasEditar: path.resolve(
+          __dirname,
+          "src/pelicula-editar/index.html"
+        ),
+
+        actoresListado: path.resolve(
+          __dirname,
+          "src/actores-listado/index.html"
+        ),
+        actoresCrear: path.resolve(__dirname, "src/actores-crear/index.html"),
+        actoresEditar: path.resolve(__dirname, "src/actores-editar/index.html"),
       },
     },
   },
