@@ -1,16 +1,17 @@
 import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
-import type { UserConfig as VitestUserConfigInterface } from "vitest/config";
-
-const vitestConfig: VitestUserConfigInterface = {
-  test: {
-    globals: true,
-    restoreMocks: true,
-  },
-};
+import path from "path";
 
 export default defineConfig({
-  plugins: [checker({ typescript: true })],
-  test: vitestConfig.test,
   root: "./src",
+  plugins: [checker({ typescript: true })],
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "src/index.html"),
+        peliculas: path.resolve(__dirname, "src/pelicula-listado/index.html"),
+        actores: path.resolve(__dirname, "src/actores-listado/index.html"),
+      },
+    },
+  },
 });
