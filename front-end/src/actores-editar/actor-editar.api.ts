@@ -1,9 +1,10 @@
 import axios from "axios";
 import { Actor } from "./actor-editar.model";
+import { API_BASE_URL } from "../core/api/api.config";
 
 export const obtenerActor = async (id: string): Promise<Actor> => {
   try {
-    const { data } = await axios.get(`http://localhost:3000/actors/${id}`);
+    const { data } = await axios.get(`${API_BASE_URL}/actors/${id}`);
     return data;
   } catch (error) {
     throw new Error("Error al obtener actor");

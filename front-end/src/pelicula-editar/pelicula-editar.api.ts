@@ -1,9 +1,10 @@
 import axios from "axios";
 import { Movie } from "./pelicula-editar.model";
+import { API_BASE_URL } from "../core/api/api.config";
 
 export const obtenerPelicula = async (id: string): Promise<Movie> => {
   try {
-    const { data } = await axios.get(`http://localhost:3000/movies/${id}`);
+    const { data } = await axios.get(`${API_BASE_URL}/movies/${id}`);
     return data;
   } catch (error) {
     throw new Error("Error al obtener la pelicula");
